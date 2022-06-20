@@ -1,9 +1,13 @@
-import { Box, Container, Text } from '@chakra-ui/react';
+//chakra imports
+import { Box, Container } from '@chakra-ui/react';
+//next imports
 import Head from 'next/head';
+//core imports
+import { Breadcrumbs } from '../components/heading';
 
 export default function Home() {
 	return (
-		<Container minH='70%'>
+		<Container minHeight='70%' maxW='100%' px='10'>
 			<Head>
 				<title>Tickrr | Powering Teams</title>
 				<meta
@@ -14,13 +18,7 @@ export default function Home() {
 			</Head>
 
 			<Box>
-				<Text as='h1'>
-					Welcome to <a href='https://nextjs.org'>Next.js!</a>
-				</Text>
-
-				<Text>
-					Get started by editing <code>pages/index.js</code>
-				</Text>
+				<Breadcrumbs />
 			</Box>
 		</Container>
 	);

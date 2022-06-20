@@ -45,7 +45,7 @@ const SidebarContent = (...rest) => {
 			h='full'
 			{...rest}
 		>
-			<Flex h='20' alignItems='center' mx='8' justifyContent='space-between'>
+			<Flex h='20' alignItems='center' gap={4}>
 				<FiCpu color='teal' />
 				<Text fontSize='xl' fontFamily='monospace' fontWeight='bold'>
 					Team Rocket
@@ -69,8 +69,9 @@ const NavItem = ({ icon, children, ...rest }) => {
 		>
 			<Flex
 				align='center'
-				p='4'
-				mx='4'
+				pr='4'
+				py='4'
+				mr='4'
 				borderRadius='lg'
 				role='group'
 				cursor='pointer'
@@ -78,6 +79,7 @@ const NavItem = ({ icon, children, ...rest }) => {
 					bg: 'teal.400',
 					color: 'white',
 				}}
+				fontSize='14px'
 				{...rest}
 			>
 				{icon && (

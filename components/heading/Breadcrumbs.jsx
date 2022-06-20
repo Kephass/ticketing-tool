@@ -1,8 +1,17 @@
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
+import {
+	Breadcrumb,
+	BreadcrumbItem,
+	BreadcrumbLink,
+	useColorMode,
+} from '@chakra-ui/react';
 
 export const Breadcrumbs = () => {
 	return (
-		<Breadcrumb fontWeight='medium' fontSize='sm'>
+		<Breadcrumb
+			fontWeight='medium'
+			fontSize='sm'
+			color={useColorMode[('gray.300', 'white')]}
+		>
 			<BreadcrumbItem>
 				<BreadcrumbLink href='#'>Projects</BreadcrumbLink>
 			</BreadcrumbItem>

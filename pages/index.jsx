@@ -1,13 +1,22 @@
 //chakra imports
-import { Box, Container } from '@chakra-ui/react';
+import {
+	Box,
+	Container,
+	Divider,
+	Stat,
+	StatHelpText,
+	StatLabel,
+	Text,
+	useColorModeValue,
+} from '@chakra-ui/react';
 //next imports
 import Head from 'next/head';
-//core imports
-import { Breadcrumbs } from '../components/heading';
+import NextLink from 'next/link';
 
 export default function Home() {
+	const color = useColorModeValue('#000', '#fff');
 	return (
-		<Container minHeight='70%' maxW='100%' px='10'>
+		<Container minHeight='70vh' maxW='100%' px='10'>
 			<Head>
 				<title>Tickrr | Powering Teams</title>
 				<meta
@@ -18,8 +27,31 @@ export default function Home() {
 			</Head>
 
 			<Box>
-				<Breadcrumbs />
+				<Text color={color} fontSize='2xl' fontWeight='bold'>
+					Your work
+				</Text>
 			</Box>
+			<NextLink href='/projects'>
+				<Box
+					w='300px'
+					p={5}
+					my={3}
+					borderWidth='1px'
+					rounded='lg'
+					fontSize='sm'
+				>
+					<Stat>
+						<StatLabel fontSize='md' fontWeight='bold'>
+							Team Rocket
+						</StatLabel>
+						<StatHelpText>Company-managed software</StatHelpText>
+						<StatHelpText>My open issues</StatHelpText>
+						<StatHelpText>Done issues</StatHelpText>
+						<Divider my={5}></Divider>
+						<StatHelpText>1 board</StatHelpText>
+					</Stat>
+				</Box>
+			</NextLink>
 		</Container>
 	);
 }
